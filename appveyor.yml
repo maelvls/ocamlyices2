@@ -36,3 +36,4 @@ deploy: # Deploy to GitHub Releases
     #prerelease: true
     on:
       appveyor_repo_tag: true
+      

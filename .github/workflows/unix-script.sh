@@ -1,6 +1,8 @@
 #! /bin/sh
 set -e
 
+HOST=$(./autoconf/config.guess)
+
 case "$(uname -s)" in
 Linux)
   sudo apt-get install -qq libgmp-dev
@@ -11,8 +13,6 @@ Darwin)
 esac
 
 opam install -y ocamlfind zarith ounit
-
-HOST=$(./autoconf/config.guess)
 
 eval $(opam config env)
 ./configure

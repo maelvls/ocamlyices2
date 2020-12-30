@@ -1,6 +1,8 @@
 #! /bin/sh
 set -e
 
+HOST=x86_64-w64-mingw32
+
 eval $(opam config env)
 CFLAGS="-I/usr/${HOST}/sys-root/mingw/include -L/usr/${HOST}/sys-root/mingw/lib/" \
     opam install -y ocamlfind zarith ounit

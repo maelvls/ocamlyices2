@@ -56,12 +56,12 @@ jobs:
           path: c:\cygwin\home\runneradmin\.opam
           key: ${{ matrix.image }}-${{ matrix.ocaml-version }}
 
-      - if: runner.os == 'Windows'
-        run: c:\cygwin\setup-x86_64.exe --quiet-mode --root c:\cygwin --site http://cygwin.mirror.constant.com --packages binutils,rsync,patch,diffutils,curl,make,unzip,git,m4,perl,mingw64-x86_64-gcc-core,gperf,zip,gnupg,coreutils
-
       - uses: actions-ml/setup-ocaml@master
         with:
           ocaml-version: ${{ matrix.ocaml-version }}
+
+      - if: runner.os == 'Windows'
+        run: c:\cygwin\setup-x86_64.exe --quiet-mode --root c:\cygwin --site http://cygwin.mirror.constant.com --packages binutils,rsync,patch,diffutils,curl,make,unzip,git,m4,perl,mingw64-x86_64-gcc-core,gperf,zip,gnupg,coreutils
 
       - if: runner.os == 'Windows'
         shell: bash

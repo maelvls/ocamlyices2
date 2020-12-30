@@ -1,3 +1,6 @@
+#! /bin/sh
+set -e
+
 case "$(uname -s)" in
 Linux)
   sudo apt-get install -qq libgmp-dev

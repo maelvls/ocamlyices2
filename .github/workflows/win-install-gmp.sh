@@ -1,3 +1,6 @@
+#! /bin/sh
+set -e
+
 HOST=x86_64-w64-mingw32
 
 # We build a static version libgmp.a for our build of ocamlyices2.

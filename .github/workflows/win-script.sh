@@ -1,4 +1,5 @@
-cd ..
+#! /bin/sh
+set -e
 
 eval $(opam config env)
 CFLAGS="-I/usr/${HOST}/sys-root/mingw/include -L/usr/${HOST}/sys-root/mingw/lib/" \

@@ -1,0 +1,40 @@
+on:
+  push:
+    tags:
+      - "v*" # Push events to matching v*, i.e. v1.0, v20.15.10
+
+jobs:
+  deploy_binary:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+
+      - uses: actions/download-artifact@v2
+        with:
+          name: ocamlyices2
+      - uses: shogo82148/actions-upload-release-asset@v1
+        env:
+          token: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ocamlyices2/*
+
+      - uses: actions/download-artifact@v2
+        with:
+          name: libgmp
+      - uses: shogo82148/actions-upload-release-asset@v1
+        env:
+          token: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: libgmp/*

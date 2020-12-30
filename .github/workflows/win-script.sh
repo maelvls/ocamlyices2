@@ -24,7 +24,7 @@ cd ..
 make uninstall
 
 make dist
-DIST=ocamlyices2-$(git describe --tags)-${HOST}
+DIST=ocamlyices2-$(git describe --tags --always)-${HOST}
 mv dist $DIST
 tar czf ${DIST}.tar.gz $DIST
 echo "$(sha256sum ${DIST}.tar.gz)" >${DIST}.tar.gz.sha256

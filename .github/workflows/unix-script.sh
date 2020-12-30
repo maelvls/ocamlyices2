@@ -32,7 +32,7 @@ cd ..
 make uninstall
 
 make dist
-DIST=ocamlyices2-$(git describe --tags)-${HOST}
+DIST=ocamlyices2-$(git describe --tags --always)-${HOST}
 mv dist $DIST
 tar czf ${DIST}.tar.gz $DIST
 # If SHA256SUM is not set, ${} will return sha256sum.

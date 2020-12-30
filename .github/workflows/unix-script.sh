@@ -9,7 +9,7 @@ Linux)
   sudo apt-get install -qq libgmp-dev
   ;;
 Darwin)
-  brew install bubblewrap gmp coreutils # 'gmp' and 'coreutils' are already installed on travis
+  brew install gmp coreutils # 'gmp' and 'coreutils' are already installed on travis
   ;;
 esac
 

@@ -1,5 +1,6 @@
 #! /bin/sh
 set -e
+set -x
 
 HOST=$(./autoconf/config.guess)
 

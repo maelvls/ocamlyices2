@@ -1,5 +1,6 @@
 #! /bin/sh
 set -e
+set -x
 
 HOST=x86_64-w64-mingw32
 

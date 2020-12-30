@@ -18,6 +18,7 @@ cd gmp-6.2.1
 ./configure --prefix=/usr/${HOST}/sys-root/mingw --host=${HOST} --disable-shared --enable-static CC=${HOST}-gcc
 make
 make install
+cd ..
 
 DIST=gmp-6.2.1-static-${HOST}
 mkdir ${DIST}

@@ -85,7 +85,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         if: runner.os == 'Windows'
         with:
-          name: libgmp
+          name: gmp
           path: gmp-*.tar.gz*
       # - name: Setup tmate session
       #   if: ${{ failure() }}

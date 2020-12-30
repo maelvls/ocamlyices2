@@ -33,10 +33,10 @@ jobs:
 
       - uses: actions/download-artifact@v2
         with:
-          name: libgmp
+          name: gmp
       - uses: shogo82148/actions-upload-release-asset@v1
         env:
           token: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: libgmp/*
+          asset_path: gmp/*

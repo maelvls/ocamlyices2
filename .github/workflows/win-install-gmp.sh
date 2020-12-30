@@ -9,8 +9,8 @@ HOST=x86_64-w64-mingw32
 # that both benefit from this build.
 # Note: for downloading, I switched from https://gmplib.org/download/ to a
 # mirror of the GNU fundation.
-curl -L -O http://gnu.uberglobalmirror.com/gmp/gmp-6.2.1.tar.bz2
-curl -L -O http://gnu.uberglobalmirror.com/gmp/gmp-6.2.1.tar.bz2.sig
+curl -L -O https://gmplib.org/download/gmp/gmp-6.2.1.tar.bz2
+curl -L -O https://gmplib.org/download/gmp/gmp-6.2.1.tar.bz2.sig
 #gpg --keyserver wwwkeys.pgp.net --recv-keys 28C67298
 #gpg --verify gmp-6.2.1.tar.bz2.sig gmp-6.2.1.tar.bz2
 tar -jxf gmp-6.2.1.tar.bz2
